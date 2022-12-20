@@ -1,0 +1,43 @@
+.img-fluid{
+    background-color: white;
+    border-radius: 40px;
+    margin-bottom: 1.5rem;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.hiddenRight{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(50%);
+    transition: all 0.1s;
+}
+
+.show{
+    opacity: 1;
+    filter:blur(0);
+    transform: translateX(0);
+}
+
+.part:nth-child(2){
+    transition-delay: 200ms;
+}
+
+.part:nth-child(3){
+    transition-delay: 400ms;
+}
+
+.part:nth-child(4){
+    transition-delay: 600ms;
+}
+
+@media(prefers-reduced-motion){
+    .hidden {
+        transition: none;
+    }
+}

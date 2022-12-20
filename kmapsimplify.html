@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of The Maps</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="history.css"> -->
+</head>
+<body style="background: linear-gradient(#164eb6,#0081cf, #164eb6,#0081cf); color: white;" >
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">The Bool School</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html#teachme">Start Learning</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="masterquiz.html">Take Master Quiz</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center mb-3">
+            <div class="col-md-9">
+              <div class="display-3 text-center text-light mb-5 mt-3">Simplifying Boolean Expressions Using Karnaugh Maps</div>
+            </div>
+            <div class="col-6 col-md-4">
+              <img src="img/simplifyingmapstitleimage.png" alt="Computer Graphic" class="img-fluid" style="border-radius: 3rem;">
+            </div>
+        </div>
+
+        
+        <div class="row gx-0 d-flex align-items-center justify-content-center">
+          <div class="col-12 col-md-8 mb-5 gx-0 text text-light text-md-center text-sm-center text-xsm-center mt-3">
+                  <div class="row md-gy-5">
+                      <p class="lead" style="font-size: 1.5rem;"> Now that we understand the history of Karnaugh Maps 
+                      as well as the various types, we can now dive in to understanding how to simplify them. This simplification
+                      is done through the grouping of minterms.</p>
+                  </div>
+          </div>
+    </div>
+    
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+
+    <div class="row d-flex align-items-center justify-content-center mt-3 mb-5">
+      <div class="col">
+        <div class="display-5 text-start mb-3"> Grouping Minterms</div>
+        <p class="lead" style="font-size: 1.3rem;"> In a 3-input Karnaugh map, any two horizontally or vertically adjacent minterms, 
+          each made up of three variables, can be joined to create a new product term made up of just two variables.Likewise, any two horizontally 
+          or vertically adjacent minterms in a four-input map can be joined to create 
+          a new product term with just three variables.
+        </p> 
+        <p class="lead" style="font-size: 1.3rem;"> The 1s connected to the minterms can also be used to create various groupings.
+          In fact, any group of 2^n adjacent minterms can be gathered together (where n is a positive integer). For example, 2<sup>2</sup> = two minterms, 
+          2<sup>2</sup> = 2 × 2 = four minterms, 2<sup>3</sup> = 2 × 2 × 2 = eight minterms, and so forth.
+        </p> 
+      </div>
+      <div class="col-7 col-md-4">
+          <img src="img/minterm1.png" alt="Computer Graphic" class="img-fluid" style="border-radius: 3rem;">
+      </div>
+    </div> 
+    
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col">
+        <p class="lead" style="font-size: 1.5rem;"> Groupings may also wrap from adjacent edges of the Karnaugh map.
+        </p> 
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col-8">
+        <img src="img/minterm2.png" alt="Computer Graphic" class="img-fluid" style="border-radius: 3rem;">
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center mt-3 mb-5">
+      <div class="col-10">
+        <p class="lead" style="font-size: 1.5rem;"> 
+          Since the top-bottom rows and the left-right columns are logically adjacent, 
+          the four corner minterms are likewise logically adjacent, which in turn means 
+          they may be used to make a single group even though diagonally adjacent minterms 
+          typically cannot be used to form a group.
+        </p> 
+      </div>
+    </div>
+
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col">
+        <div class="display-5 text-center mb-3">Incompletely Specified Functions
+        </div> 
+      </div>
+    </div>
+    
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col-6">
+        <img src="img/minterm3.png" alt="Computer Graphic" class="img-fluid" style="border-radius: 3rem;">
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center mt-4 mb-5">
+      <div class="col-9">
+        <p class="lead" style="font-size: 1.4rem;"> 
+          Since the top-bottom rows and the left-right columns are logically adjacent, 
+          the four corner minterms are likewise logically adjacent, which in turn means 
+          they may be used to make a single group even though diagonally adjacent minterms 
+          typically cannot be used to form a group.
+        </p> 
+      </div>
+    </div>
+
+    <div class="row my-5"></div>
+    <div class="row my-5"></div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col">
+        <div class="display-4 text-center mb-3">Populating Maps Using 0s VS 1s
+        </div> 
+      </div>
+    </div>
+    
+    <div class="row d-flex align-items-center justify-content-center text-start mt-4">
+      <div class="col-10">
+        <p class="lead" style="font-size: 1.4rem;"> 
+          In the case of a function whose output is logic 1 less frequently than it is logic 0, 
+          it is typically simpler to extract an equation in the sum-of-products form when extracting
+           Boolean equations from truth tables. Likewise, it is typically simpler to extract an equation in 
+           the product-of-sums form if the result is logic 0 less frequently than it is logic 1. These two forms
+            of expressions will produce identical results.
+        </p> 
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <div class="col-6">
+        <img src="img/minterm4.png" alt="Computer Graphic" class="img-fluid" style="border-radius: 3rem;">
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center justify-content-center text-start mt-4 mb-5">
+      <div class="col-10">
+        <p class="lead" style="font-size: 1.4rem;"> 
+          Three- and four-input functions are most frequently represented as Karnaugh maps. 
+          Similar maps can be made for functions with 5 and 6 inputs, but they can easily become 
+          cumbersome and challenging to use. As a result, it is generally accepted that the Karnaugh 
+          approach is not suitable for functions that have more than six inputs.
+        </p> 
+      </div>
+    </div>
+  
+
+    <div class="row mb-5"></div>
+        <div class="row mb-5"></div>
+  
+         <div class="section6">
+          <div class="container">
+              <div class="row gy-4">
+               <div class="col">
+                <div class="display-5 text-center text-light">Think You Got It Covered?</div>
+               </div>
+              </div>
+              <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-3">
+                  <img src="img/home2.png" alt="Lab Graphic" class="img-fluid">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="display-6 text-center text-light">Take The Karnaugh Map Mini Quiz!</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 my-4 d-grid gap-2 d-m-flex justify-content-center">
+                  <a href="karnaughquiz.html" class="btn btn-light btn-lg btn-rounded fw-bold px-4 py-2" style="color: #164eb6;">START QUIZ</a>
+                </div>
+              </div>
+          </div>
+        </div>
+
+    <div class="section3">
+      <div class="container-fluid">
+          <div class="row mt-5 mb-2">
+           <div class="col">
+            <div class="p text-center text-light">The Bool School</div>
+           </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    
+  </div>
+</body>
+</html>

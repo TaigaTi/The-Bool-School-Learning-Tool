@@ -1,0 +1,32 @@
+.btn-rounded
+{
+    border-radius: 5rem;
+}
+
+.card-link
+{
+    color: #164eb6;
+    letter-spacing: 0.1rem; 
+    background-color: #f5f5f5;
+    width: 90%;
+}
+
+.card
+{
+    border-radius: 1.5rem;
+}
+
+.card-graphic
+{
+    opacity: 0.7;
+}
+
+.learn-btn
+{
+    border: 0.25rem solid white;
+}
+
+.slogan
+{
+    opacity: 0.7;
+}

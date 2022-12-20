@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="quine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>Quine Mcluskey Techniques</title>
+</head>
+
+<body style="background: linear-gradient(#164eb6,#0081cf, #164eb6,#0081cf);">
+
+    <!--HEADER-->
+    <div class="section1 pb-5">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">The Bool School</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html#teachme">Start Learning</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="masterquiz.html">Take Master Quiz</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="col-md-9 mx-auto px-5">
+      <!--I N T R O D U C T I O N-->
+      <div id="intro" class="row align-items-center text-light mt-5 " style="margin-bottom:7rem;">
+        <div id="text" class="col">
+          <h1>Quine McCluskey Techniques</h1>
+          <p class="hidden part lead">The Quine McCluskey Method is also referred to as the Tabular Method. It was created by Willard V. Quine in 1952 and extended by Edward J. McCluskey in 1956. It implements searching rather than mapping and collects terms by looking for entries that differ only in a single bit. It is more useful than K-mapping when the number of inputs is greater than 6.</p>
+        </div>
+        <div id="image" class="col text-center">
+          <img src="img/Quine/willard.jpg" alt="Willard V. Quine">
+          <p class="hidden part lead">Willard V. Quine</p>
+        </div>
+      </div>
+
+      <!--D E C I M A L   T O   B I N A R Y   C O N V E R T E R-->
+      <div class="row mb-5 align-items-center" style="margin-bottom:7rem;">
+        <div class="container card col-7 mb-3 p-4">
+          <div class="row my-3">
+              <div class="display-5 text-center text-primary mb-3 fw-bold">Decimal-Binary Converter</div>
+          </div>
+          <div class="row gx-0 d-flex align-items-center justify-content-center">
+            <div class="row g-2 mx-3">
+              <div class="form-floating mb-3 col-md">
+                <input type="number" class="form-control" id="dec">
+                <label for="decimal">Decimal</label> 
+              </div>
+              <div class="form-floating col-md">
+                <input type="number" class="form-control" id="bin">
+                <label for="binary">Binary</label>
+              </div>
+            </div>
+            <p class="mt-2 text-danger text-center" id="errorMsg"></p>
+          </div>
+        </div>
+
+        <div class="text-light col-md text-right">
+          <p class="lead">Quine McCluskey Techniques are dependent on the binary representation of min-terms. Use this tool for your conversions.</p>
+        </div>
+      </div>
+
+      <!--K E Y   T E R M S-->
+      <div id="keyTerms" style="margin-bottom:7rem;">
+        <h2 class="text-light mb-3">Key Terms</h2>
+        <!--I M P L I C A N T-->
+        <div class="terms row justify-content-between text-center mb-5">
+          <div class="card text-bg-light mb-3 part hidden col-lg" style="max-width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Implicant</h5>
+              <p class="card-text">A group of ones.</p>
+            </div>
+          </div>
+
+          <!--P R I M E   I M P L I C A N T-->
+          <div class="card text-bg-light mb-3 part hidden col-lg" style="max-width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Prime Implicant</h5>
+              <p class="card-text">The largest possible groups of ones.</p>
+            </div>
+          </div>
+
+          <!--E S S E N T I A L   P R I M E   I M P L I C A N T-->
+          <div class="card text-bg-light mb-3 part hidden col-lg" style="max-width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Essential Prime Implicant</h5>
+              <p class="card-text">A prime implicant having at least one min-term that can’t be combined in any other way.</p>
+            </div>
+          </div>
+
+          <!--L E A S T   A N D   M O S T   S I G N I F I C A N T   B I T S-->
+          <div class="card text-bg-light mb-3 part hidden col-lg" style="max-width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Bit Hierarchy</h5>
+              <p class="card-text">In the function f(A, B, C, D), the most significant bit (MSB) is A and D is the least significant bit (LSB).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Q U E S T I O N-->
+      <div id="question" class="text-center text-light mb-5">
+        <h1>Let's Take a Look at an Example!</h1>
+        <p class="lead">Y(A,B,C,D) = Σm(0, 2, 6, 8, 9, 10, 11, 15)</p>
+        <p class="lead">Before we get started, we must understand what the question is saying. A, B, C and D are the variables. 0, 2, 6, etc are the min-terms. </p>
+      </div>
+
+      <!--S T E P  1-->
+      <div id="step1" class="row text-light" style="margin-top:7rem;">
+        <div id="step1_des" class="col">
+          <h2>Step 1: Binary Equivalents</h2>
+          <p class="lead">The first step is to identify the binary equivalents of each min-term. We can do this using the 'Decimal-Binary Converter' above. The number of bits used to represent the min-terms is determined by the number of variables present. Since there are four variables, we can have a maximum of 2^4 min terms (i.e. we can represent min-terms from 0-15)</p>
+        </div>
+
+        <div id="bin_equiv" class="col">
+          <img src="img/Quine/bin_equiv.png" alt="" style="width:35rem; border-radius:10px;" class="mb-3 col">
+        </div>
+      </div>
+
+      <!--S T E P   2--><!--put it in reverse order to get the words on the other side-->
+      <div id="step2" class="row text-light d-flex flex-row-reverse" style="margin-top:7rem;">
+        <div id="step2_des"  class="col">
+          <h2>Step 2: Group Min-Terms</h2>
+          <p class="lead" id="s2text">The second step is to create a table to group the min-terms based on the number of ones present in each binary representation. The Group number corresponds to the number of 1's present in the Binary Representation. 'M' refers to the min-term.</p>
+        </div>
+
+        <div id="carouselStep2" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:35rem;">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselStep2" data-bs-slide-to="0" class="active btn bg-primary" aria-current="true" aria-label="Slide 1" ></button>
+            <button type="button" data-bs-target="#carouselStep2" data-bs-slide-to="1" aria-label="Slide 2" class="btn bg-primary" ></button>
+            <button type="button" data-bs-target="#carouselStep2" data-bs-slide-to="2" aria-label="Slide 3" class="btn bg-primary" ></button>
+            <button type="button" data-bs-target="#carouselStep2" data-bs-slide-to="3" aria-label="Slide 4" class="btn bg-primary" ></button>
+          </div>
+
+          <div class="carousel-inner" style="border-radius:10px;"> 
+            <div class="carousel-item active">
+              <img src="img/Quine/step2_p1.png" class="d-block w-100 col-7" alt="..."id="s2t1">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step2_p2.png" class="d-block w-100" alt="..." id="s2t2">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step2_p3.png" class="d-block w-100" alt="..." id="s2t3">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step2_p4.png" class="d-block w-100" alt="..." id="s2t4">
+            </div>
+          </div>
+          <button class="carousel-control-prev btn-primary" type="button" data-bs-target="#carouselStep2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselStep2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!--S T E P   3-->
+      <div id="step3" class="row text-light" style="margin-top:7rem;">
+        <div id="step3_des" class="col">
+          <h2>Step 3: Matching Pairs</h2>
+          <p class="lead" id="s3text">The third step is to create a table of matching pairs using the previous table. Each pair will have a member from nth and (n+1)th groups. The members of each pair can <b>ONLY</b> differ by one bit. Here are some examples. The underscores "_" represents the differing values which have been eliminated. The video below shows how all pairings were achieved. The last slide is a representation of what not to do. As you can see, M2 and M9 differ by 3 bits.</p>
+        </div>
+
+        <div id="carouselStep3" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:35rem;">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselStep3" data-bs-slide-to="0" class="active btn bg-primary" aria-current="true" aria-label="Slide 1" id="s3t1"></button>
+            <button type="button" data-bs-target="#carouselStep3" data-bs-slide-to="1" aria-label="Slide 2" class="btn bg-primary" id="s3t2"></button>
+            <button type="button" data-bs-target="#carouselStep3" data-bs-slide-to="2" aria-label="Slide 3" class="btn bg-primary" id="s3t3"></button>
+            <button type="button" data-bs-target="#carouselStep3" data-bs-slide-to="3" aria-label="Slide 4" class="btn bg-danger" id="s3t4"></button>
+          </div>
+
+          <div class="carousel-inner" style="border-radius:10px;">
+            <div class="carousel-item active">
+              <img src="img/Quine/step3_p1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step3_p2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step3_p3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step3_fail.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev btn-primary" type="button" data-bs-target="#carouselStep3" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselStep3" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!--S T E P   4-->
+      <div id="step4" class="row text-light d-flex flex-row-reverse" style="margin-top:7rem;">
+        <div id="step4_des" class="col">
+          <h2>Step 4: Second Matching Pairs</h2>
+          <p class="lead" id="s4text">Since the previous table can be minimized further, we create another Matching Pair table. The same rules apply. Here are some examples. The video below shows how all pairings were achieved. This table will produce the Prime Implicants. 1 represents the variable and 0 represents the complement of the variable. The last slide is a representation of what not to do. As you can see, (M2-M6) and (M6-M14) differ by 2 bits.</p>
+        </div>
+
+        <div id="carouselStep4" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:35rem;">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselStep4" data-bs-slide-to="0" class="active btn bg-primary" aria-current="true" aria-label="Slide 1" id="s4t1"></button>
+            <button type="button" data-bs-target="#carouselStep4" data-bs-slide-to="1" aria-label="Slide 2" class="btn bg-primary" id="s4t2"></button>
+            <button type="button" data-bs-target="#carouselStep4" data-bs-slide-to="2" aria-label="Slide 3" class="btn bg-danger" id="s4t3"></button>
+          </div>
+
+          <div class="carousel-inner" style="border-radius:10px;">
+            <div class="carousel-item active">
+              <img src="img/Quine/step4_p1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step4_p2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step4_fail.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev btn-primary" type="button" data-bs-target="#carouselStep4" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselStep4" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!--S T E P   5-->
+      <div id="step5" class="row text-light" style="margin-top:7rem; margin-bottom: 7rem;">
+        <div id="step5_des" class="col">
+          <h2>Step 5: Prime Implicant Table</h2>
+          <p class="lead">The final step is to create the Prime Implicant Table. This table will determine the Essential Prime Implicants which will make up the minimized function. Place X’s in the columns where the min-terms are represented. We then highlight the X’s in the columns which only contain 1 X. Afterwards, we highlight these rows to determine the Essential Prime Implicants to create the minimized expression. </p>
+        </div>
+
+        <div id="carouselStep5" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:35rem;">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselStep5" data-bs-slide-to="0" class="active btn bg-primary" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselStep5" data-bs-slide-to="1" aria-label="Slide 2" class="btn bg-primary"></button>
+            <button type="button" data-bs-target="#carouselStep5" data-bs-slide-to="2" aria-label="Slide 3" class="btn bg-primary"></button>
+            <button type="button" data-bs-target="#carouselStep5" data-bs-slide-to="3" aria-label="Slide 4" class="btn bg-primary"></button>
+            <button type="button" data-bs-target="#carouselStep5" data-bs-slide-to="4" aria-label="Slide 5" class="btn bg-primary"></button>
+          </div>
+
+          <div class="carousel-inner" style="border-radius:10px;">
+            <div class="carousel-item active">
+              <img src="img/Quine/step5_p5.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step5_p1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step5_p2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step5_p3.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/Quine/step5_p4.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev btn-primary" type="button" data-bs-target="#carouselStep5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselStep5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#ADAFAF; border-radius: 3px;"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <!--V I D E O-->
+
+
+      <!--LINKS TO QUIZZES, CHECK OUT OTHER SECTIONS-->
+      <div class="section3">
+        <div class="container">
+            <div class="row gy-4">
+             <div class="col">
+              <div class="display-5 text-center text-light mb-3">Think You Got It Covered?</div>
+             </div>
+            </div>
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="col-3">
+                <img src="img/home2.png" alt="Lab Graphic" class="img-fluid">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="display-6 text-center text-light">Take The Mini Quiz!</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 my-4 d-grid gap-2 d-m-flex justify-content-center">
+                <a href="quinequiz.html" class="btn btn-light btn-lg btn-rounded fw-bold px-4 py-2" style="color: #164eb6;">START QUIZ</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--F O O T E R-->
+    <div class="section3">
+      <div class="container-fluid">
+          <div class="row mt-5 mb-2">
+           <div class="col">
+            <div class="p text-center text-light">The Bool School</div>
+           </div>
+          </div>
+      </div>
+
+    <script src="quine.js"></script>
+</body>
+</html>
